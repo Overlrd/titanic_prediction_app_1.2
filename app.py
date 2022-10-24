@@ -50,8 +50,11 @@ def predict():
 	prediction = request_pred(x)
 	if prediction['result'] == 1:
 		st.success('Passenger  Survived :thumbsup:')	
-	else:
+	elif prediction['result'] == 0:
 		st.error('Passenger Did Not Survived :thumbsdown:')
+	else:
+			st.error('error :thumbsdown:')
+
 
 
 st.button('Predict', on_click=predict)
